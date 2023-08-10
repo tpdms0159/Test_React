@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <div id="root"></div>
+    </body>
+<script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
+<script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<script type="text/babel">
+    const Title = () => (<h3 id="title" onMouseEnter={()=> console.log("title")}>Hello I'm title!</h3>);
+    const Btn = () => (<button id="btn" onClick={() => console.log("I'm click")}>Click me</button>);
+    const root = document.getElementById("root");
+    const Container = () => (<div><Title /> <Btn /> </div>);
+    ReactDOM.render(<Container />, root);
+
+    // Container 요소에 Title, Btn 을 넣어서 render 하기 위해 각각 함수로 변환
+    // 함수로 변환한 후 HTML 태그로 사용해서 rendering 함
+    
+</script>
+</html>
