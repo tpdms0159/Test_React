@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <div id="root"></div> 
+    </body>
+<script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
+<script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<script type="text/babel">
+    const root = document.getElementById("root");
+    function App() {
+        const [amount, setAmount]=React.useState(0);
+        const [flipped, setFlipped] = React.useState(false);
+        const onChange= (event)=>{
+            console.log("somebody wrote");
+            console.log(event.target.value);
+            setAmount(event.target.value);
+            
+        }
+        const reset = () => setAmount(0);
+        const onFlipped = () => setFlipped(current => !current);
+        
+        return(
+
+            <div>
+                <h1>Super Converter</h1>
+                <label htmlFor="amount">Minutes</label>
+                <input 
+                    value={flipped ? amount * 60 : amount} 
+                    id="minutes" 
+                    placeholder="minutes" 
+                    type="number"
+                    onChange={onChange}
+                    disabled={flipped} />
+
+                <h2>you want {amount}</h2>
+                <label for="hours">Hours</label>
+                <input 
+                    value={flipped ? amount: Math.round(amount/60)} 
+                    id="hours" 
+                    placeholder="hours" 
+                    type="number"
+                    onChange={onChange}
+                    disabled={!flipped} />
+                <div>
+                    <button onClick={reset}>reset</button>
+                    <button onClick={onFlipped}>{flipped ? "turnback" : "flip"}</button>
+                    </div>
+                
+            </div>
+            
+        );
+    }
+
+    ReactDOM.render(<App />, root);
+
+    // useState 를 이용해서 변화된 부분만 업데이트하고 재로딩 가능
+    // for 은 javascript 언어이므로 react 에서 사용하면 에러 발생
+    // for 을 사용하고 싶으면 htmlfor 으로 작성해야 함
+    // production 버전이라 javascript 도 에러 없이 사용가능하지만 developer 버전으로 사용하면 에러가 발생함
+    // class 또한 className으로 작성해야하는 것과 같음
+</script>
+</html>

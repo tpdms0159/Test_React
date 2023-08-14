@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <div id="root"></div> 
+    </body>
+<script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
+<script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<script type="text/babel">
+    const root = document.getElementById("root");
+    let counter = 0;
+    const countUp  = () => {
+        counter++;
+        console.log(counter);
+        render();
+        
+    }
+    function render () {
+        ReactDOM.render(<Container />, root);
+    }
+    const Container= () => (
+        <div>
+            <h3>Total clicks : {counter}</h3>
+            <button onClick={countUp}>click me</button>
+            </div>
+    )
+    render();
+
+    // render 함수를 이용하여 counter 가 증가할 떄마다 새로 페이지를 로드하는 방식
+    
+</script>
+</html>
