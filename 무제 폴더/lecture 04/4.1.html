@@ -20,10 +20,9 @@
        function Btn (props) {
         console.log(props.text, "was rendered");
         return <button style={{
-                backgroundColor :"tomato",
+                backgroundColor :"black",
                 color : "white",
                 size: "5px",
-                border : "solid blue 5px",
                 borderRadius : "10px",
                 margin : "10px"
             
@@ -38,7 +37,7 @@
         const changeValue = () => {
             setValue("Revert Changes");
         }
-        return(
+        return( 
             <div>
                 <Memorize text={value} onClick={changeValue}/>
                 <Memorize text="Confirm"/>
@@ -46,7 +45,6 @@
             
         );
     }
-
      // props 가 변경되지 않는한 다시 그리지 않도록 하는 방법
     // 즉 confirm 버튼은 다시 그릴 필요가 없음
     // react.memo 로 변하지 않는 요소는 다시 그려내지 않도록할 수 있음 - 추후 속도가 느려지는 원인이 될 수 있음
