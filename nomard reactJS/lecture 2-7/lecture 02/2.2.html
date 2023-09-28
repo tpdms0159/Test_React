@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+    <link rel="stylesheet" href="./2.css"/>
 <body>
-    <span>Total Click : 0</span>
-    <button id="btn">Click me</button>
+    <div class="div_2">
+        <p>Total Click : 0</p>
+        <button id="btn">Click me</button>  
+    </div>
 </body>
 <script>
     let count = 0;
     const button = document.getElementById("btn");
-    const span = document.querySelector("span");
+    const span = document.querySelector("p");
 
     function handleClick () {
         console.log("I have been click.")
