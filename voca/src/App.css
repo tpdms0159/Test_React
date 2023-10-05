@@ -1,4 +1,62 @@
-.App {
+button {
+  background-color: aquamarine;
+  border-radius: 10px;
+  margin: 10px;
+  border: 0;
+  padding: 10px;
+  width: 150px;
+  text-decoration: none;
+
+}
+.smallBtn  {
+  width: 80px;
+}
+
+.title {
+  width: 20%;
+  font-size: 20px;
+  text-decoration: none;
+  color: black;
+}
+.header {
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  /* justify-content: center; */
+  align-items: center;
+  /* width: 100%; */
+}
+
+.btnBox {
+  display: flex;
+  flex-direction: row-reverse;
+  width: 80%;
+}
+
+table {
+  margin: 0 auto;
+  border-collapse: collapse;
+  width: 80%;
+  justify-content: center;
+  align-items: center;
+  table-layout: fixed;
+}
+
+td {
+  border: 2px solid gainsboro;
   text-align: center;
 }
 
+.off {
+  background-color: bisque;
+}
+
+.inputBox {
+  padding: 20px;
+}
+
+select {
+  width: 100px;
+  margin: auto;
+  border-radius: 20px;
+}
